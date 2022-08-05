@@ -23,15 +23,7 @@ class Blog(models.Model):
     def __str__(self):
         return self.blog_title
 
-# class BlogComment(models.Model):
-#     sno = models.AutoField(primary_key=True)
-#     comment = models.TextField()
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-#     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
-#     timestamp = models.DateField(default=now)
-#
-#     def __str__(self):
-#         return self.comment[0:13] + "..." + "by" + " " + self.user.username
+
 
 
 

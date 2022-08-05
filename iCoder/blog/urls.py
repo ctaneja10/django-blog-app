@@ -15,6 +15,5 @@ urlpatterns = [
     path('login/', views.handleLogin, name='handleLogin'),
     path('logout/', views.handleLogout, name='handleLogout'),
 
-    # API to post a comment
-    # path('postComment', views.postComment, name='postComment'),
+
 ]

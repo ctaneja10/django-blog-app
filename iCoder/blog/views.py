@@ -109,17 +109,7 @@ def handleLogout(request):
     return redirect('home')
 
 
-# def postComment(request):
-#     if request.method == "POST":
-#         comment = request.POST.get('comment')
-#         user = request.user
-#         blog_blog_slug = request.POST.get('blog_blog_slug')
-#         post = Blog.objects.get(blog_slug=blog_blog_slug)
-#         comment_done = BlogComment(comment=comment, user=user, blog=post)
-#         comment_done.save()
-#         messages.success(request, "Your comment has been posted successfully")
-#
-#     return redirect(f"/blog/{post.slug}")
+
 
 
 
