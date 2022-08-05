@@ -39,7 +39,6 @@ def iCoder(request):
     return render(request, 'blog/iCoder.html')
 
 def blogpost(request, slug):
-    # comments = BlogComment.objects.filter(blog=blog)
     all_blogs = Blog.objects.filter(blog_slug = slug)[0]
     params = {'all_blogs':all_blogs}
     return render(request, 'blog/blogpost.html', params)
