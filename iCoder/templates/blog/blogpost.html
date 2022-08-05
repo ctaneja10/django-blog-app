@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %} Blogpost {% endblock title %}
+
+{% block body %}
+
+<div class="container mt-4 mb-4">
+  <div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        {{all_blogs.blog_title}}
+      </h3>
+
+      <article class="blog-post">
+        <h2 class="blog-post-title mb-1">{{all_blogs.blog_sub_heading}}</h2>
+        <p class="blog-post-meta">{{all_blogs.blog_pub_date}}</p>
+
+        <pre><h5>{{all_blogs.blog_content}}</h5></pre>
+
+      </article>
+
+    </div>
+
+    <div class="col-md-4">
+
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="fb-like col-md-12" data-href="http://127.0.0.1:8000/blogpost/{{all_blogs.blog_slug}}" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
+
+    <div class="fb-comments col-md-12" data-href="http://127.0.0.1:8000/blogpost/{{all_blogs.blog_slug}}" data-width="" data-numposts="5"></div>
+
+    
+
+  </div>
+
+</div>
+{% endblock body %}

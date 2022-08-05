@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} Search Results {% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <h1 class="mt-4">Search Results:</h1>
+    <div class="row mt-4">
+        {% if all_blogs|length < 1 %}
+        <h5 class="mx-3">No results found for "<b>{{query}}</b>"</h5>
+        {% endif %}
+        {% for blog in all_blogs %}
+        <div class="col-md-6">
+            <h5 class="mb-4">Search results for "<b>{{query}}</b>"</h5>
+            <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                <div class="card-body d-flex flex-column align-items-start">
+                    <strong class="d-inline-block mb-2 text-success">Design</strong>
+                    <h3 class="mb-0">
+                        <a class="text-dark" href="#">{{blog.blog_title|slice:21}}...</a>
+                    </h3>
+                    <div class="mb-1 text-muted">{{blog.blog_pub_date}}</div>
+                    <p class="card-text mb-auto">{{blog.blog_content|slice:90}}...</p>
+                    <a href="/blogpost/{{blog.blog_slug}}">Continue reading</a>
+                </div>
+                <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb"
+                    alt="Thumbnail [200x250]"
+                    src="https://swapps.com/wp-content/uploads/2019/04/django-faster.jpg"
+                    data-holder-rendered="true" style="width: 200px; height: 250px;">
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+
+</div>
+
+{% endblock body %}
+
+
+
